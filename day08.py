@@ -17,7 +17,7 @@ def main():
                 for l in range(1, len(lines) - i):
                     for k in range(1, len(line) - j):
                         print(f"antinodes at")
-                        for kk in range(max(len(lines), len(line), 2)):
+                        for kk in range(max(len(lines), len(line))):
 
                             if (
                                 lines[i][j] != "."
@@ -45,7 +45,7 @@ def main():
                     for k in range(j, -1, -1):
                         if lines[i][j] != "." and lines[i][j] == lines[i + l][j - k]:
                             print(f"antinodes at")
-                            for kk in range(max(len(lines), len(line), 2)):
+                            for kk in range(max(len(lines), len(line))):
                                 print(
                                     f"{i + kk * l} {j - kk * k} and {i - kk * l} {j + kk * k}"
                                 )
