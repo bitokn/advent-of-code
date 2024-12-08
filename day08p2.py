@@ -27,7 +27,6 @@ def main():
                                     and copyl[i + kk * l][j + kk * k] != "#"
                                 ):
                                     p1 += 1
-                                    # if lines[i + kk * l][j + kk * k] == ".":
                                     copyl[i + kk * l][j + kk * k] = "#"
                                 if (
                                     (i - kk * l) >= 0
@@ -35,7 +34,6 @@ def main():
                                     and copyl[i - kk * l][j - kk * k] != "#"
                                 ):
                                     p1 += 1
-                                    # if lines[i - kk * l][j - kk * k] == ".":
                                     copyl[i - kk * l][j - kk * k] = "#"
                     for k in range(j, -1, -1):
                         if lines[i][j] != "." and lines[i][j] == lines[i + l][j - k]:
@@ -49,7 +47,6 @@ def main():
                                     and copyl[i + kk * l][j - kk * k] != "#"
                                 ):
                                     p1 += 1
-                                    # if lines[i + kk * l][j - kk * k] == ".":
                                     copyl[i + kk * l][j - kk * k] = "#"
                                 if (
                                     (i - kk * l) >= 0
@@ -57,11 +54,10 @@ def main():
                                     and copyl[i - kk * l][j + kk * k] != "#"
                                 ):
                                     p1 += 1
-                                    # if lines[i - kk* l][j + kk* k] == ".":
                                     copyl[i - kk * l][j + kk * k] = "#"
-
-                    # print(lines[i][j])
-
+        for line in lines:
+            print(line)
+        print("---")
         for line in copyl:
             print(line)
         print(p1)
