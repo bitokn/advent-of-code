@@ -133,21 +133,12 @@ def place_obstruction(i, j, grid, initial_pos):
                 and guard_pos[0] < len(new_grid[0]) - 1
             ):
                 if new_grid[guard_pos[1] - 1][guard_pos[0]] == "#":
-                    # print("thing above")
-                    # new_grid[guard_pos[1]][guard_pos[0]] = "+"
                     past_positions.add(((guard_pos[0], guard_pos[1]), guard_dir))
                     guard_dir = "r"
-                    # guard_pos = guard_pos[0] + 1
                 else:
-                    # if new_grid[guard_pos[1]][guard_pos[0]] == "-":
-                    #     #new_grid[guard_pos[1]][guard_pos[0]] = "+"
-                    #     pass
-                    # else:
-                    #     new_grid[guard_pos[1]][guard_pos[0]] = "|"
                     past_positions.add(((guard_pos[0], guard_pos[1]), guard_dir))
                     guard_pos = (guard_pos[0], guard_pos[1] - 1)
             else:
-                # new_grid[guard_pos[1]][guard_pos[0]] = "^"
                 in_bounds = False
         if guard_dir == "r":
             if (
@@ -157,20 +148,12 @@ def place_obstruction(i, j, grid, initial_pos):
                 and guard_pos[0] < len(new_grid[0]) - 1
             ):
                 if new_grid[guard_pos[1]][guard_pos[0] + 1] == "#":
-                    # print("thing to the right")
-                    # new_grid[guard_pos[1]][guard_pos[0]] = "+"
                     past_positions.add(((guard_pos[0], guard_pos[1]), guard_dir))
                     guard_dir = "d"
-                    # guard_pos = guard_pos[1] + 1
                 else:
-                    # if new_grid[guard_pos[1]][guard_pos[0]] == "|":
-                    #     new_grid[guard_pos[1]][guard_pos[0]] = "+"
-                    # else:
-                    #     new_grid[guard_pos[1]][guard_pos[0]] = "-"
                     past_positions.add(((guard_pos[0], guard_pos[1]), guard_dir))
                     guard_pos = (guard_pos[0] + 1, guard_pos[1])
             else:
-                # new_grid[guard_pos[1]][guard_pos[0]] = ">"
                 in_bounds = False
 
         if guard_dir == "d":
@@ -181,20 +164,12 @@ def place_obstruction(i, j, grid, initial_pos):
                 and guard_pos[0] < len(new_grid[0]) - 1
             ):
                 if new_grid[guard_pos[1] + 1][guard_pos[0]] == "#":
-                    # print("thing below")
-                    # new_grid[guard_pos[1]][guard_pos[0]] = "+"
                     past_positions.add(((guard_pos[0], guard_pos[1]), guard_dir))
                     guard_dir = "l"
-                    # guard_pos = guard_pos[0] - 1
                 else:
-                    # if new_grid[guard_pos[1]][guard_pos[0]] == "-":
-                    #     new_grid[guard_pos[1]][guard_pos[0]] = "+"
-                    # else:
-                    #     new_grid[guard_pos[1]][guard_pos[0]] = "|"
                     past_positions.add(((guard_pos[0], guard_pos[1]), guard_dir))
                     guard_pos = (guard_pos[0], guard_pos[1] + 1)
             else:
-                # new_grid[guard_pos[1]][guard_pos[0]] = "v"
                 in_bounds = False
         if guard_dir == "l":
             if (
@@ -204,28 +179,16 @@ def place_obstruction(i, j, grid, initial_pos):
                 and guard_pos[0] < len(new_grid[0]) - 1
             ):
                 if new_grid[guard_pos[1]][guard_pos[0] - 1] == "#":
-                    # print("thing to the left")
-                    # new_grid[guard_pos[1]][guard_pos[0]] = "+"
                     past_positions.add(((guard_pos[0], guard_pos[1]), guard_dir))
                     guard_dir = "u"
-                    # guard_pos[1] -= 1
                 else:
-                    # if new_grid[guard_pos[1]][guard_pos[0]] == "|":
-                    #     new_grid[guard_pos[1]][guard_pos[0]] = "+"
-                    # else:
-                    #     new_grid[guard_pos[1]][guard_pos[0]] = "-"
                     past_positions.add(((guard_pos[0], guard_pos[1]), guard_dir))
                     guard_pos = (guard_pos[0] - 1, guard_pos[1])
             else:
-                # new_grid[guard_pos[1]][guard_pos[0]] = "<"
                 in_bounds = False
-        # #print(sum)
-        # print(past_positions)
-        # print(guard_pos, guard_dir)
         if (guard_pos, guard_dir) in past_positions:
             return True
 
-    # print(sum)
     return False
 
 
