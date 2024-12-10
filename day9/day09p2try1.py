@@ -48,9 +48,10 @@ def main():
                 if limit > 100:
                     break
                 while True:
-                    if int(sizes[k][1]) <= start_end[1] - start_end[
+                    new_var = int(sizes[k][1])
+                    if new_var <= start_end[1] - start_end[0] + 1 and start_end[
                         0
-                    ] + 1 and start_end[0] < og_s.index(sizes[k][0]):
+                    ] < og_s.index(sizes[k][0]):
                         if int(sizes[k][1]) > 1 and sizes[k][0] in new_s:
                             for _ in range(int(sizes[k][1]) - 2):
                                 del new_s[start_end[0]]
